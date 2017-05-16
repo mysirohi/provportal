@@ -11,21 +11,21 @@ import javax.persistence.*;
 public class ProviderenrollmentperiodPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
+
+	@Column(name="PROV_BASE_NUMBER", unique=true, nullable=false, precision=10)
 	private long provBaseNumber;
+
+	@Column(name="PROV_ENROL_STAT_CD", unique=true, nullable=false, length=1)
 	private String provEnrolStatCd;
 
 	public ProviderenrollmentperiodPK() {
 	}
-
-	@Column(name="PROV_BASE_NUMBER", unique=true, nullable=false, precision=10)
 	public long getProvBaseNumber() {
 		return this.provBaseNumber;
 	}
 	public void setProvBaseNumber(long provBaseNumber) {
 		this.provBaseNumber = provBaseNumber;
 	}
-
-	@Column(name="PROV_ENROL_STAT_CD", unique=true, nullable=false, length=1)
 	public String getProvEnrolStatCd() {
 		return this.provEnrolStatCd;
 	}

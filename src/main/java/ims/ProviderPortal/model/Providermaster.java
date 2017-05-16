@@ -13,31 +13,64 @@ import java.util.Date;
 @Table(name="providermaster")
 public class Providermaster implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(unique=true, nullable=false, precision=10)
 	private long prov_Base_Number;
+
+	@Column(name="CLERK_IDENTIFICATION", length=8)
 	private String clerkIdentification;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATE_OF_LAST_TRANS")
 	private Date dateOfLastTrans;
+
+	@Column(name="DEFAULT_IND_PROV_NPI", length=1)
 	private String defaultIndProvNpi;
+
+	@Column(name="OUT_OF_STATE_PROV_CD", length=1)
 	private String outOfStateProvCd;
+
+	@Column(name="PROV_APPL_COMPLETE_STATUS")
 	private int provApplCompleteStatus;
+
+	@Column(name="PROV_COUNTY_CODE", length=2)
 	private String provCountyCode;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_DATE_OF_BIRTH")
 	private Date provDateOfBirth;
+
+	@Column(name="PROV_EMPLR_IDENT_NUM_OR_SS_NUM", length=9)
 	private String provEmplrIdentNumOrSsNum;
+
+	@Column(name="PROV_FAX_NUM")
 	private int provFaxNum;
+
+	@Column(name="PROV_NAME", length=35)
 	private String provName;
+
+	@Column(nullable=false, length=10)
 	private String prov_NPI;
+
+	@Column(name="PROV_SORT_NAME", length=35)
 	private String provSortName;
+
+	@Column(name="PROV_SSN_IRS_NUM_IND", length=1)
 	private String provSsnIrsNumInd;
+
+	@Column(name="PROV_TAXONOMY", length=10)
 	private String provTaxonomy;
+
+	@Column(name="PROV_TELE_NUM")
 	private int provTeleNum;
+
+	@Column(name="PROV_TYPE", length=2)
 	private String provType;
 
 	public Providermaster() {
 	}
 
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(unique=true, nullable=false, precision=10)
 	public long getProv_Base_Number() {
 		return this.prov_Base_Number;
 	}
@@ -46,8 +79,6 @@ public class Providermaster implements Serializable {
 		this.prov_Base_Number = prov_Base_Number;
 	}
 
-
-	@Column(name="CLERK_IDENTIFICATION", length=8)
 	public String getClerkIdentification() {
 		return this.clerkIdentification;
 	}
@@ -56,9 +87,6 @@ public class Providermaster implements Serializable {
 		this.clerkIdentification = clerkIdentification;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATE_OF_LAST_TRANS")
 	public Date getDateOfLastTrans() {
 		return this.dateOfLastTrans;
 	}
@@ -67,8 +95,6 @@ public class Providermaster implements Serializable {
 		this.dateOfLastTrans = dateOfLastTrans;
 	}
 
-
-	@Column(name="DEFAULT_IND_PROV_NPI", length=1)
 	public String getDefaultIndProvNpi() {
 		return this.defaultIndProvNpi;
 	}
@@ -77,8 +103,6 @@ public class Providermaster implements Serializable {
 		this.defaultIndProvNpi = defaultIndProvNpi;
 	}
 
-
-	@Column(name="OUT_OF_STATE_PROV_CD", length=1)
 	public String getOutOfStateProvCd() {
 		return this.outOfStateProvCd;
 	}
@@ -87,8 +111,6 @@ public class Providermaster implements Serializable {
 		this.outOfStateProvCd = outOfStateProvCd;
 	}
 
-
-	@Column(name="PROV_APPL_COMPLETE_STATUS")
 	public int getProvApplCompleteStatus() {
 		return this.provApplCompleteStatus;
 	}
@@ -97,8 +119,6 @@ public class Providermaster implements Serializable {
 		this.provApplCompleteStatus = provApplCompleteStatus;
 	}
 
-
-	@Column(name="PROV_COUNTY_CODE", length=2)
 	public String getProvCountyCode() {
 		return this.provCountyCode;
 	}
@@ -107,9 +127,6 @@ public class Providermaster implements Serializable {
 		this.provCountyCode = provCountyCode;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_DATE_OF_BIRTH")
 	public Date getProvDateOfBirth() {
 		return this.provDateOfBirth;
 	}
@@ -118,8 +135,6 @@ public class Providermaster implements Serializable {
 		this.provDateOfBirth = provDateOfBirth;
 	}
 
-
-	@Column(name="PROV_EMPLR_IDENT_NUM_OR_SS_NUM", length=9)
 	public String getProvEmplrIdentNumOrSsNum() {
 		return this.provEmplrIdentNumOrSsNum;
 	}
@@ -128,8 +143,6 @@ public class Providermaster implements Serializable {
 		this.provEmplrIdentNumOrSsNum = provEmplrIdentNumOrSsNum;
 	}
 
-
-	@Column(name="PROV_FAX_NUM")
 	public int getProvFaxNum() {
 		return this.provFaxNum;
 	}
@@ -138,8 +151,6 @@ public class Providermaster implements Serializable {
 		this.provFaxNum = provFaxNum;
 	}
 
-
-	@Column(name="PROV_NAME", length=35)
 	public String getProvName() {
 		return this.provName;
 	}
@@ -148,8 +159,6 @@ public class Providermaster implements Serializable {
 		this.provName = provName;
 	}
 
-
-	@Column(nullable=false, length=10)
 	public String getProv_NPI() {
 		return this.prov_NPI;
 	}
@@ -158,8 +167,6 @@ public class Providermaster implements Serializable {
 		this.prov_NPI = prov_NPI;
 	}
 
-
-	@Column(name="PROV_SORT_NAME", length=35)
 	public String getProvSortName() {
 		return this.provSortName;
 	}
@@ -168,8 +175,6 @@ public class Providermaster implements Serializable {
 		this.provSortName = provSortName;
 	}
 
-
-	@Column(name="PROV_SSN_IRS_NUM_IND", length=1)
 	public String getProvSsnIrsNumInd() {
 		return this.provSsnIrsNumInd;
 	}
@@ -178,8 +183,6 @@ public class Providermaster implements Serializable {
 		this.provSsnIrsNumInd = provSsnIrsNumInd;
 	}
 
-
-	@Column(name="PROV_TAXONOMY", length=10)
 	public String getProvTaxonomy() {
 		return this.provTaxonomy;
 	}
@@ -188,8 +191,6 @@ public class Providermaster implements Serializable {
 		this.provTaxonomy = provTaxonomy;
 	}
 
-
-	@Column(name="PROV_TELE_NUM")
 	public int getProvTeleNum() {
 		return this.provTeleNum;
 	}
@@ -198,8 +199,6 @@ public class Providermaster implements Serializable {
 		this.provTeleNum = provTeleNum;
 	}
 
-
-	@Column(name="PROV_TYPE", length=2)
 	public String getProvType() {
 		return this.provType;
 	}

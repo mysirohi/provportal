@@ -13,17 +13,28 @@ import java.util.Date;
 @Table(name="providergroup")
 public class Providergroup implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
 	private ProvidergroupPK id;
+
+	@Column(name="CLERK_IDENTIFICATION", length=8)
 	private String clerkIdentification;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATE_OF_LAST_TRANS")
 	private Date dateOfLastTrans;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_GROUP_BEG_DATE")
 	private Date provGroupBegDate;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_GROUP_END_DATE")
 	private Date provGroupEndDate;
 
 	public Providergroup() {
 	}
 
-
-	@EmbeddedId
 	public ProvidergroupPK getId() {
 		return this.id;
 	}
@@ -32,8 +43,6 @@ public class Providergroup implements Serializable {
 		this.id = id;
 	}
 
-
-	@Column(name="CLERK_IDENTIFICATION", length=8)
 	public String getClerkIdentification() {
 		return this.clerkIdentification;
 	}
@@ -42,9 +51,6 @@ public class Providergroup implements Serializable {
 		this.clerkIdentification = clerkIdentification;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATE_OF_LAST_TRANS")
 	public Date getDateOfLastTrans() {
 		return this.dateOfLastTrans;
 	}
@@ -53,9 +59,6 @@ public class Providergroup implements Serializable {
 		this.dateOfLastTrans = dateOfLastTrans;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_GROUP_BEG_DATE")
 	public Date getProvGroupBegDate() {
 		return this.provGroupBegDate;
 	}
@@ -64,9 +67,6 @@ public class Providergroup implements Serializable {
 		this.provGroupBegDate = provGroupBegDate;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_GROUP_END_DATE")
 	public Date getProvGroupEndDate() {
 		return this.provGroupEndDate;
 	}

@@ -13,17 +13,28 @@ import java.util.Date;
 @Table(name="providercertification")
 public class Providercertification implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
 	private ProvidercertificationPK id;
+
+	@Column(name="CLERK_IDENTIFICATION", length=8)
 	private String clerkIdentification;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATE_OF_LAST_TRANS")
 	private Date dateOfLastTrans;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_CERTIF_BEG_DT")
 	private Date provCertifBegDt;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_CERTIF_END_DT")
 	private Date provCertifEndDt;
 
 	public Providercertification() {
 	}
 
-
-	@EmbeddedId
 	public ProvidercertificationPK getId() {
 		return this.id;
 	}
@@ -32,8 +43,6 @@ public class Providercertification implements Serializable {
 		this.id = id;
 	}
 
-
-	@Column(name="CLERK_IDENTIFICATION", length=8)
 	public String getClerkIdentification() {
 		return this.clerkIdentification;
 	}
@@ -42,9 +51,6 @@ public class Providercertification implements Serializable {
 		this.clerkIdentification = clerkIdentification;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATE_OF_LAST_TRANS")
 	public Date getDateOfLastTrans() {
 		return this.dateOfLastTrans;
 	}
@@ -53,9 +59,6 @@ public class Providercertification implements Serializable {
 		this.dateOfLastTrans = dateOfLastTrans;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_CERTIF_BEG_DT")
 	public Date getProvCertifBegDt() {
 		return this.provCertifBegDt;
 	}
@@ -64,9 +67,6 @@ public class Providercertification implements Serializable {
 		this.provCertifBegDt = provCertifBegDt;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_CERTIF_END_DT")
 	public Date getProvCertifEndDt() {
 		return this.provCertifEndDt;
 	}

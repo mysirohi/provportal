@@ -14,53 +14,136 @@ import java.util.Date;
 @Table(name="provideradditionalinfo")
 public class Provideradditionalinfo implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="PROV_BASE_NUMBER", unique=true, nullable=false, precision=10)
 	private long provBaseNumber;
+
+	@Column(name="ADJUSTMENT_REASON", length=2)
 	private String adjustmentReason;
+
+	@Column(name="CLERK_IDENTIFICATION", length=8)
 	private String clerkIdentification;
+
+	@Column(name="CREDIT_BAL_AMT", precision=10, scale=2)
 	private BigDecimal creditBalAmt;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="CREDIT_BALANCE_DATE")
 	private Date creditBalanceDate;
+
+	@Column(name="CRITICAL_ACCESS_IND", length=1)
 	private String criticalAccessInd;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATE_OF_LAST_TRANS")
 	private Date dateOfLastTrans;
+
+	@Column(name="EFT_DFI_ACCT_NUMBER", length=17)
 	private String eftDfiAcctNumber;
+
+	@Column(name="EFT_DFI_ROUTE_ID")
 	private int eftDfiRouteId;
+
+	@Column(name="EMC_BILLING_IND", length=1)
 	private String emcBillingInd;
+
+	@Column(name="HOSP_TAX_IND", length=1)
 	private String hospTaxInd;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="INIT_CRE_BAL_DATE")
 	private Date initCreBalDate;
+
+	@Column(name="LIEN_AMOUNT", precision=10, scale=2)
 	private BigDecimal lienAmount;
+
+	@Column(name="LIEN_AMOUNT_PAID", precision=10, scale=2)
 	private BigDecimal lienAmountPaid;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="LIEN_DATE")
 	private Date lienDate;
+
+	@Column(name="LIEN_DEDUCT_AMOUNT", precision=10, scale=2)
 	private BigDecimal lienDeductAmount;
+
+	@Column(name="LIEN_DEDUCT_PERCENT", precision=10, scale=2)
 	private BigDecimal lienDeductPercent;
+
+	@Column(name="LIEN_HOLDER_PROV_NUM", precision=10)
 	private BigDecimal lienHolderProvNum;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="LIEN_WH_DATE")
 	private Date lienWhDate;
+
+	@Column(name="MAX_CHK_BAL_DED_AMT", precision=10, scale=2)
 	private BigDecimal maxChkBalDedAmt;
+
+	@Column(name="MAX_CHK_BAL_DED_PCT", precision=10, scale=4)
 	private BigDecimal maxChkBalDedPct;
+
+	@Column(name="PROV_340B_IND", length=1)
 	private String prov340bInd;
+
+	@Column(name="PROV_AFP_IND", length=1)
 	private String provAfpInd;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_APPL_DATE")
 	private Date provApplDate;
+
+	@Column(name="PROV_CHECK_ADDR_IND", length=1)
 	private String provCheckAddrInd;
+
+	@Column(name="PROV_CLIA_ID", length=10)
 	private String provCliaId;
+
+	@Column(name="PROV_CORRES_ADDR_IND", length=1)
 	private String provCorresAddrInd;
+
+	@Column(name="PROV_CORRESP_MEDIA", length=1)
 	private String provCorrespMedia;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_LIC_EXPIRE_DATE")
 	private Date provLicExpireDate;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_LICENSE_DATE")
 	private Date provLicenseDate;
+
+	@Column(name="PROV_LICENSE_NUM", length=9)
 	private String provLicenseNum;
+
+	@Column(name="PROV_OWNERSHIP_CODE", length=1)
 	private String provOwnershipCode;
+
+	@Column(name="PROV_PAYMENT_METHOD", length=1)
 	private String provPaymentMethod;
+
+	@Column(name="PROV_PRINT_SUSP_IND", length=1)
 	private String provPrintSuspInd;
+
+	@Column(name="PROV_REMIT_ADDR_IND", length=1)
 	private String provRemitAddrInd;
+
+	@Column(name="PROV_REMIT_MEDIA", length=1)
 	private String provRemitMedia;
+
+	@Column(name="PROV_TAX_NAME", length=35)
 	private String provTaxName;
+
+	@Column(name="RECOUPMENT_AMOUNT", precision=10, scale=2)
 	private BigDecimal recoupmentAmount;
+
+	@Column(name="TYPE_PRACTICE_ORGAN", length=2)
 	private String typePracticeOrgan;
 
 	public Provideradditionalinfo() {
 	}
 
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(name="PROV_BASE_NUMBER", unique=true, nullable=false, precision=10)
 	public long getProvBaseNumber() {
 		return this.provBaseNumber;
 	}
@@ -69,8 +152,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provBaseNumber = provBaseNumber;
 	}
 
-
-	@Column(name="ADJUSTMENT_REASON", length=2)
 	public String getAdjustmentReason() {
 		return this.adjustmentReason;
 	}
@@ -79,8 +160,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.adjustmentReason = adjustmentReason;
 	}
 
-
-	@Column(name="CLERK_IDENTIFICATION", length=8)
 	public String getClerkIdentification() {
 		return this.clerkIdentification;
 	}
@@ -89,8 +168,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.clerkIdentification = clerkIdentification;
 	}
 
-
-	@Column(name="CREDIT_BAL_AMT", precision=10, scale=2)
 	public BigDecimal getCreditBalAmt() {
 		return this.creditBalAmt;
 	}
@@ -99,9 +176,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.creditBalAmt = creditBalAmt;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="CREDIT_BALANCE_DATE")
 	public Date getCreditBalanceDate() {
 		return this.creditBalanceDate;
 	}
@@ -110,8 +184,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.creditBalanceDate = creditBalanceDate;
 	}
 
-
-	@Column(name="CRITICAL_ACCESS_IND", length=1)
 	public String getCriticalAccessInd() {
 		return this.criticalAccessInd;
 	}
@@ -120,9 +192,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.criticalAccessInd = criticalAccessInd;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATE_OF_LAST_TRANS")
 	public Date getDateOfLastTrans() {
 		return this.dateOfLastTrans;
 	}
@@ -131,8 +200,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.dateOfLastTrans = dateOfLastTrans;
 	}
 
-
-	@Column(name="EFT_DFI_ACCT_NUMBER", length=17)
 	public String getEftDfiAcctNumber() {
 		return this.eftDfiAcctNumber;
 	}
@@ -141,8 +208,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.eftDfiAcctNumber = eftDfiAcctNumber;
 	}
 
-
-	@Column(name="EFT_DFI_ROUTE_ID")
 	public int getEftDfiRouteId() {
 		return this.eftDfiRouteId;
 	}
@@ -151,8 +216,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.eftDfiRouteId = eftDfiRouteId;
 	}
 
-
-	@Column(name="EMC_BILLING_IND", length=1)
 	public String getEmcBillingInd() {
 		return this.emcBillingInd;
 	}
@@ -161,8 +224,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.emcBillingInd = emcBillingInd;
 	}
 
-
-	@Column(name="HOSP_TAX_IND", length=1)
 	public String getHospTaxInd() {
 		return this.hospTaxInd;
 	}
@@ -171,9 +232,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.hospTaxInd = hospTaxInd;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="INIT_CRE_BAL_DATE")
 	public Date getInitCreBalDate() {
 		return this.initCreBalDate;
 	}
@@ -182,8 +240,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.initCreBalDate = initCreBalDate;
 	}
 
-
-	@Column(name="LIEN_AMOUNT", precision=10, scale=2)
 	public BigDecimal getLienAmount() {
 		return this.lienAmount;
 	}
@@ -192,8 +248,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienAmount = lienAmount;
 	}
 
-
-	@Column(name="LIEN_AMOUNT_PAID", precision=10, scale=2)
 	public BigDecimal getLienAmountPaid() {
 		return this.lienAmountPaid;
 	}
@@ -202,9 +256,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienAmountPaid = lienAmountPaid;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="LIEN_DATE")
 	public Date getLienDate() {
 		return this.lienDate;
 	}
@@ -213,8 +264,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienDate = lienDate;
 	}
 
-
-	@Column(name="LIEN_DEDUCT_AMOUNT", precision=10, scale=2)
 	public BigDecimal getLienDeductAmount() {
 		return this.lienDeductAmount;
 	}
@@ -223,8 +272,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienDeductAmount = lienDeductAmount;
 	}
 
-
-	@Column(name="LIEN_DEDUCT_PERCENT", precision=10, scale=2)
 	public BigDecimal getLienDeductPercent() {
 		return this.lienDeductPercent;
 	}
@@ -233,8 +280,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienDeductPercent = lienDeductPercent;
 	}
 
-
-	@Column(name="LIEN_HOLDER_PROV_NUM", precision=10)
 	public BigDecimal getLienHolderProvNum() {
 		return this.lienHolderProvNum;
 	}
@@ -243,9 +288,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienHolderProvNum = lienHolderProvNum;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="LIEN_WH_DATE")
 	public Date getLienWhDate() {
 		return this.lienWhDate;
 	}
@@ -254,8 +296,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.lienWhDate = lienWhDate;
 	}
 
-
-	@Column(name="MAX_CHK_BAL_DED_AMT", precision=10, scale=2)
 	public BigDecimal getMaxChkBalDedAmt() {
 		return this.maxChkBalDedAmt;
 	}
@@ -264,8 +304,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.maxChkBalDedAmt = maxChkBalDedAmt;
 	}
 
-
-	@Column(name="MAX_CHK_BAL_DED_PCT", precision=10, scale=4)
 	public BigDecimal getMaxChkBalDedPct() {
 		return this.maxChkBalDedPct;
 	}
@@ -274,8 +312,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.maxChkBalDedPct = maxChkBalDedPct;
 	}
 
-
-	@Column(name="PROV_340B_IND", length=1)
 	public String getProv340bInd() {
 		return this.prov340bInd;
 	}
@@ -284,8 +320,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.prov340bInd = prov340bInd;
 	}
 
-
-	@Column(name="PROV_AFP_IND", length=1)
 	public String getProvAfpInd() {
 		return this.provAfpInd;
 	}
@@ -294,9 +328,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provAfpInd = provAfpInd;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_APPL_DATE")
 	public Date getProvApplDate() {
 		return this.provApplDate;
 	}
@@ -305,8 +336,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provApplDate = provApplDate;
 	}
 
-
-	@Column(name="PROV_CHECK_ADDR_IND", length=1)
 	public String getProvCheckAddrInd() {
 		return this.provCheckAddrInd;
 	}
@@ -315,8 +344,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provCheckAddrInd = provCheckAddrInd;
 	}
 
-
-	@Column(name="PROV_CLIA_ID", length=10)
 	public String getProvCliaId() {
 		return this.provCliaId;
 	}
@@ -325,8 +352,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provCliaId = provCliaId;
 	}
 
-
-	@Column(name="PROV_CORRES_ADDR_IND", length=1)
 	public String getProvCorresAddrInd() {
 		return this.provCorresAddrInd;
 	}
@@ -335,8 +360,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provCorresAddrInd = provCorresAddrInd;
 	}
 
-
-	@Column(name="PROV_CORRESP_MEDIA", length=1)
 	public String getProvCorrespMedia() {
 		return this.provCorrespMedia;
 	}
@@ -345,9 +368,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provCorrespMedia = provCorrespMedia;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_LIC_EXPIRE_DATE")
 	public Date getProvLicExpireDate() {
 		return this.provLicExpireDate;
 	}
@@ -356,9 +376,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provLicExpireDate = provLicExpireDate;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_LICENSE_DATE")
 	public Date getProvLicenseDate() {
 		return this.provLicenseDate;
 	}
@@ -367,8 +384,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provLicenseDate = provLicenseDate;
 	}
 
-
-	@Column(name="PROV_LICENSE_NUM", length=9)
 	public String getProvLicenseNum() {
 		return this.provLicenseNum;
 	}
@@ -377,8 +392,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provLicenseNum = provLicenseNum;
 	}
 
-
-	@Column(name="PROV_OWNERSHIP_CODE", length=1)
 	public String getProvOwnershipCode() {
 		return this.provOwnershipCode;
 	}
@@ -387,8 +400,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provOwnershipCode = provOwnershipCode;
 	}
 
-
-	@Column(name="PROV_PAYMENT_METHOD", length=1)
 	public String getProvPaymentMethod() {
 		return this.provPaymentMethod;
 	}
@@ -397,8 +408,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provPaymentMethod = provPaymentMethod;
 	}
 
-
-	@Column(name="PROV_PRINT_SUSP_IND", length=1)
 	public String getProvPrintSuspInd() {
 		return this.provPrintSuspInd;
 	}
@@ -407,8 +416,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provPrintSuspInd = provPrintSuspInd;
 	}
 
-
-	@Column(name="PROV_REMIT_ADDR_IND", length=1)
 	public String getProvRemitAddrInd() {
 		return this.provRemitAddrInd;
 	}
@@ -417,8 +424,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provRemitAddrInd = provRemitAddrInd;
 	}
 
-
-	@Column(name="PROV_REMIT_MEDIA", length=1)
 	public String getProvRemitMedia() {
 		return this.provRemitMedia;
 	}
@@ -427,8 +432,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provRemitMedia = provRemitMedia;
 	}
 
-
-	@Column(name="PROV_TAX_NAME", length=35)
 	public String getProvTaxName() {
 		return this.provTaxName;
 	}
@@ -437,8 +440,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.provTaxName = provTaxName;
 	}
 
-
-	@Column(name="RECOUPMENT_AMOUNT", precision=10, scale=2)
 	public BigDecimal getRecoupmentAmount() {
 		return this.recoupmentAmount;
 	}
@@ -447,8 +448,6 @@ public class Provideradditionalinfo implements Serializable {
 		this.recoupmentAmount = recoupmentAmount;
 	}
 
-
-	@Column(name="TYPE_PRACTICE_ORGAN", length=2)
 	public String getTypePracticeOrgan() {
 		return this.typePracticeOrgan;
 	}

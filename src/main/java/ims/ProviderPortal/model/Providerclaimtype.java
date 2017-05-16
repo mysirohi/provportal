@@ -13,23 +13,44 @@ import java.util.Date;
 @Table(name="providerclaimtype")
 public class Providerclaimtype implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
 	private ProviderclaimtypePK id;
+
+	@Column(name="CLERK_IDENTIFICATION", length=8)
 	private String clerkIdentification;
+
+	@Column(name="CLM_INPUT_FORM_IND_1", length=1)
 	private String clmInputFormInd1;
+
+	@Column(name="CLM_INPUT_FORM_IND_2", length=1)
 	private String clmInputFormInd2;
+
+	@Column(name="CLM_INPUT_FORM_IND_3", length=1)
 	private String clmInputFormInd3;
+
+	@Column(name="CLM_INPUT_FORM_IND_4", length=1)
 	private String clmInputFormInd4;
+
+	@Column(name="CLM_INPUT_FORM_IND_5", length=1)
 	private String clmInputFormInd5;
+
+	@Column(name="CLM_INPUT_FORM_IND_6", length=1)
 	private String clmInputFormInd6;
+
+	@Column(name="CLM_INPUT_FORM_IND_7", length=1)
 	private String clmInputFormInd7;
+
+	@Column(name="CLM_INPUT_FORM_IND_8", length=1)
 	private String clmInputFormInd8;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATE_OF_LAST_TRANS")
 	private Date dateOfLastTrans;
 
 	public Providerclaimtype() {
 	}
 
-
-	@EmbeddedId
 	public ProviderclaimtypePK getId() {
 		return this.id;
 	}
@@ -38,8 +59,6 @@ public class Providerclaimtype implements Serializable {
 		this.id = id;
 	}
 
-
-	@Column(name="CLERK_IDENTIFICATION", length=8)
 	public String getClerkIdentification() {
 		return this.clerkIdentification;
 	}
@@ -48,8 +67,6 @@ public class Providerclaimtype implements Serializable {
 		this.clerkIdentification = clerkIdentification;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_1", length=1)
 	public String getClmInputFormInd1() {
 		return this.clmInputFormInd1;
 	}
@@ -58,8 +75,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd1 = clmInputFormInd1;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_2", length=1)
 	public String getClmInputFormInd2() {
 		return this.clmInputFormInd2;
 	}
@@ -68,8 +83,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd2 = clmInputFormInd2;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_3", length=1)
 	public String getClmInputFormInd3() {
 		return this.clmInputFormInd3;
 	}
@@ -78,8 +91,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd3 = clmInputFormInd3;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_4", length=1)
 	public String getClmInputFormInd4() {
 		return this.clmInputFormInd4;
 	}
@@ -88,8 +99,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd4 = clmInputFormInd4;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_5", length=1)
 	public String getClmInputFormInd5() {
 		return this.clmInputFormInd5;
 	}
@@ -98,8 +107,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd5 = clmInputFormInd5;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_6", length=1)
 	public String getClmInputFormInd6() {
 		return this.clmInputFormInd6;
 	}
@@ -108,8 +115,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd6 = clmInputFormInd6;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_7", length=1)
 	public String getClmInputFormInd7() {
 		return this.clmInputFormInd7;
 	}
@@ -118,8 +123,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd7 = clmInputFormInd7;
 	}
 
-
-	@Column(name="CLM_INPUT_FORM_IND_8", length=1)
 	public String getClmInputFormInd8() {
 		return this.clmInputFormInd8;
 	}
@@ -128,9 +131,6 @@ public class Providerclaimtype implements Serializable {
 		this.clmInputFormInd8 = clmInputFormInd8;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATE_OF_LAST_TRANS")
 	public Date getDateOfLastTrans() {
 		return this.dateOfLastTrans;
 	}

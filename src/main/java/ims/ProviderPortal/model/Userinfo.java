@@ -13,17 +13,20 @@ import java.util.Date;
 @Table(name="userinfo")
 public class Userinfo implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(unique=true, nullable=false, length=8)
 	private String userid;
+
+	@Temporal(TemporalType.DATE)
 	private Date lastUpdatedDate;
+
+	@Column(length=8)
 	private String password;
 
 	public Userinfo() {
 	}
 
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(unique=true, nullable=false, length=8)
 	public String getUserid() {
 		return this.userid;
 	}
@@ -32,8 +35,6 @@ public class Userinfo implements Serializable {
 		this.userid = userid;
 	}
 
-
-	@Temporal(TemporalType.DATE)
 	public Date getLastUpdatedDate() {
 		return this.lastUpdatedDate;
 	}
@@ -42,8 +43,6 @@ public class Userinfo implements Serializable {
 		this.lastUpdatedDate = lastUpdatedDate;
 	}
 
-
-	@Column(length=8)
 	public String getPassword() {
 		return this.password;
 	}

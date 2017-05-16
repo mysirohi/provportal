@@ -13,17 +13,27 @@ import java.util.Date;
 @Table(name="providerenrollmentperiod")
 public class Providerenrollmentperiod implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	@EmbeddedId
 	private ProviderenrollmentperiodPK id;
+
+	@Column(name="CLERK_IDENTIFICATION", length=8)
 	private String clerkIdentification;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="DATE_OF_LAST_TRANS")
 	private Date dateOfLastTrans;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PROV_SPEC_CERT_DATE")
 	private Date provSpecCertDate;
+
+	@Column(name="PROV_SPEC_CERT_NUM", length=6)
 	private String provSpecCertNum;
 
 	public Providerenrollmentperiod() {
 	}
 
-
-	@EmbeddedId
 	public ProviderenrollmentperiodPK getId() {
 		return this.id;
 	}
@@ -32,8 +42,6 @@ public class Providerenrollmentperiod implements Serializable {
 		this.id = id;
 	}
 
-
-	@Column(name="CLERK_IDENTIFICATION", length=8)
 	public String getClerkIdentification() {
 		return this.clerkIdentification;
 	}
@@ -42,9 +50,6 @@ public class Providerenrollmentperiod implements Serializable {
 		this.clerkIdentification = clerkIdentification;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="DATE_OF_LAST_TRANS")
 	public Date getDateOfLastTrans() {
 		return this.dateOfLastTrans;
 	}
@@ -53,9 +58,6 @@ public class Providerenrollmentperiod implements Serializable {
 		this.dateOfLastTrans = dateOfLastTrans;
 	}
 
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="PROV_SPEC_CERT_DATE")
 	public Date getProvSpecCertDate() {
 		return this.provSpecCertDate;
 	}
@@ -64,8 +66,6 @@ public class Providerenrollmentperiod implements Serializable {
 		this.provSpecCertDate = provSpecCertDate;
 	}
 
-
-	@Column(name="PROV_SPEC_CERT_NUM", length=6)
 	public String getProvSpecCertNum() {
 		return this.provSpecCertNum;
 	}

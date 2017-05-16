@@ -11,32 +11,32 @@ import javax.persistence.*;
 public class ProviderclaimtypePK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
+
+	@Column(name="PROV_BASE_NUMBER", unique=true, nullable=false, precision=10)
 	private long provBaseNumber;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="BEGIN_CLM_TYPE_DT", unique=true, nullable=false)
 	private java.util.Date beginClmTypeDt;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="END_CLM_TYPE_DT", unique=true, nullable=false)
 	private java.util.Date endClmTypeDt;
 
 	public ProviderclaimtypePK() {
 	}
-
-	@Column(name="PROV_BASE_NUMBER", unique=true, nullable=false, precision=10)
 	public long getProvBaseNumber() {
 		return this.provBaseNumber;
 	}
 	public void setProvBaseNumber(long provBaseNumber) {
 		this.provBaseNumber = provBaseNumber;
 	}
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="BEGIN_CLM_TYPE_DT", unique=true, nullable=false)
 	public java.util.Date getBeginClmTypeDt() {
 		return this.beginClmTypeDt;
 	}
 	public void setBeginClmTypeDt(java.util.Date beginClmTypeDt) {
 		this.beginClmTypeDt = beginClmTypeDt;
 	}
-
-	@Temporal(TemporalType.DATE)
-	@Column(name="END_CLM_TYPE_DT", unique=true, nullable=false)
 	public java.util.Date getEndClmTypeDt() {
 		return this.endClmTypeDt;
 	}
