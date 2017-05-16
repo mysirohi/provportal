@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="ProviderPortalJPA">
+		<class>ims.ProviderPortal.model.Provideradditionalinfo</class>
+		<class>ims.ProviderPortal.model.Provideraddress</class>
+		<class>ims.ProviderPortal.model.ProvideraddressPK</class>
+		<class>ims.ProviderPortal.model.Providercertification</class>
+		<class>ims.ProviderPortal.model.ProvidercertificationPK</class>
+		<class>ims.ProviderPortal.model.Providerclaimtype</class>
+		<class>ims.ProviderPortal.model.ProviderclaimtypePK</class>
+		<class>ims.ProviderPortal.model.Providerenrollmentperiod</class>
+		<class>ims.ProviderPortal.model.ProviderenrollmentperiodPK</class>
+		<class>ims.ProviderPortal.model.Providergroup</class>
+		<class>ims.ProviderPortal.model.ProvidergroupPK</class>
+		<class>ims.ProviderPortal.model.Providermaster</class>
+		<class>ims.ProviderPortal.model.Providerspeciality</class>
+		<class>ims.ProviderPortal.model.ProviderspecialityPK</class>
+		<class>ims.ProviderPortal.model.Userinfo</class>
+	</persistence-unit>
+</persistence>
